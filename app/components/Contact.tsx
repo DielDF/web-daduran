@@ -1,4 +1,4 @@
-export default function ContactCTA(){
+export default function Contact(){
     return (
         <section>
             <h2>Contact</h2>
