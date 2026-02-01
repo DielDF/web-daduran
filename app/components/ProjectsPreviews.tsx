@@ -1,6 +1,6 @@
 export default function ProjectsPreviews(){
     return (
-        <section>
+        <section className="max-w-5xl mx-auto px-6 py-24">
             <h2>Star Accomplishments</h2>
             <article>
                 <h3>daduran.dev</h3>

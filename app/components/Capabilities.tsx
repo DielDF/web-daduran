@@ -1,6 +1,6 @@
 export default function Capabilities(){
     return (
-        <section>
+        <section className="max-w-5xl mx-auto px-6 py-24">
             <h2>What I Make</h2>
             <div>
                 <div>

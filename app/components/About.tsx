@@ -1,6 +1,6 @@
 export default function AboutPreview(){
     return (
-        <section>
+        <section className="max-w-5xl mx-auto px-6 py-24">
             <h2>About</h2>
             <p> Persistent and motivated upcoming avid learner transitioning into professional fields, with
             outstanding adaptability and willingness to learn as my core skills. Skilled in database management
