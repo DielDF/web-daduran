@@ -12,9 +12,6 @@ export default function Home(){
             <ProjectsPreviews/>
             <AboutPreview/>
             <ContactCTA/>
-            <div>
-                
-            </div>
         </main>
     )
 }
