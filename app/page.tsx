@@ -6,12 +6,8 @@ import Contact from "@/app/components/Contact"
 
 export default function Home() {
   return (
-    <main>
-      <Hero />
-      <Capabilities />
-      <ProjectsPreview />
-      <About />
-      <Contact />
+    <main className="min-h-screen bg-amber-400">
+      Test
     </main>
   )
 }
