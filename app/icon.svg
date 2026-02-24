@@ -1,0 +1,27 @@
+<svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <!-- Rounded background -->
+  <rect width="512" height="512" rx="96" fill="#09090b"></rect>
+
+  <!-- Tree trunk -->
+  <rect x="246" y="280" width="20" height="120" fill="#f59e0b"></rect>
+
+  <!-- Upper branches (symmetrical + Celtic-inspired structure) -->
+  <path d="
+    M256 120
+    C220 160 200 200 220 230
+    C200 210 170 230 190 260
+    C210 245 230 255 256 230
+    C282 255 302 245 322 260
+    C342 230 312 210 292 230
+    C312 200 292 160 256 120
+  " fill="#f59e0b"></path>
+
+  <!-- Subtle roots -->
+  <path d="
+    M246 400
+    C230 420 210 430 190 435
+    C215 430 240 420 256 410
+    C272 420 297 430 322 435
+    C302 430 282 420 266 400
+  " fill="#f59e0b"></path>
+</svg>
