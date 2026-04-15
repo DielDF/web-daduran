@@ -3,6 +3,7 @@ import Capabilities from "@/app/components/Capabilities"
 import ProjectsPreview from "@/app/components/ProjectsPreviews"
 import About from "@/app/components/About"
 import Contact from "@/app/components/Contact"
+import Footer from "@/app/components/Footer"
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
       <ProjectsPreview/>
       <About/>
       <Contact/>
+      <Footer/>
     </main>
   )
 }
