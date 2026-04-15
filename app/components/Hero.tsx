@@ -1,7 +1,8 @@
 export default function Hero() {
   return (
     <section className="relative flex min-h-screen items-center justify-center px-6 overflow-hidden">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(245,158,11,0.09),_transparent_60%)]"/>
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(245,158,11,0.12),_transparent_60%)]"/>
+      <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-b from-transparent to-zinc-950"/>
         <div className="relative text-center max-w-3xl">
           <h1 className="text-6xl md:text-7xl font-bold tracking-tight">
             Diego Duran
