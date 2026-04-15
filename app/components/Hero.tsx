@@ -4,6 +4,7 @@ export default function Hero() {
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(245,158,11,0.12),_transparent_60%)]"/>
       <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-b from-transparent to-zinc-950"/>
         <div className="relative text-center max-w-3xl">
+          <p className="mb-4 text-sm uppercase tracking-[0.2em] text-amber-400">Portfolio · Technical Showcase </p>
           <h1 className="text-6xl md:text-7xl font-bold tracking-tight">
             Diego Duran
           </h1>
