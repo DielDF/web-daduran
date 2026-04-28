@@ -42,7 +42,7 @@ export default function ProjectsPreviews(){
 
     if(!currProject) {
         return (
-            <section className="px-6 py-24 border-t border-zinc-900">
+            <section id="projects" className="px-6 py-24 border-t border-zinc-900">
                 <div className="max-w-6xl mx-auto text-center text-zinc-500">
                     Loading Projects...
                 </div>
@@ -52,7 +52,7 @@ export default function ProjectsPreviews(){
 
     return (
         
-        <section className="px-6 py-24 border-t border-zinc-900">
+        <section id="projects" className="px-6 py-24 border-t border-zinc-900">
             <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(245,158,11,0.05),_transparent_60%)]" />
             <div className="max-w-6xl mx-auto">
                 
