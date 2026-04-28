@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import CursorGlow from "./components/CursorGlow";
+import GrainOverlay from "./components/GrainOverlay";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -30,7 +32,9 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} bg-zinc-950 text-zinc-100 antialiased`}
       >
-        {children}
+        <CursorGlow/>
+        <div className="relative z-10">{children}</div>
+        <GrainOverlay/>
       </body>
     </html>
   );
