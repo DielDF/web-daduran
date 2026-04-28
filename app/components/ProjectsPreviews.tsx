@@ -1,33 +1,35 @@
 "use client";
 
-import { useState } from "react";
+import { useState , useEffect} from "react";
 
-const projects = [
-    {
-        title: "daduran.dev",
-        description: "Personal portfolio and technical demo built with Next.js and TailwindCSS, deployed on Vercel",
-        tech: " Next.js / Node.js / TailwindCSS / Vercel ",
-        image: "/images/website.png",
-    },
-    {
-        title:"Airflow Dynamic Simulation",
-        description: "Capstone project, used to simulate airflow in a CAD/CAM model. I focused on physics and software assimilation to client's own application.",
-        tech : " Git / Java / C++ ",
-        image: "/images/simulation4.png",
-    },
-    {
-        title: "Megaman Zero Recreation",
-        description: "Course-related project and personal passion project of mine, built with Unity and C##.",
-        tech: " 3D Modelling / Unity / C# ",
-        image: "/images/megaman.png",
-    }
-]
 export default function ProjectsPreviews(){
 
-    const [currProject, setActiveProject] = useState(projects[0]);
+    type Project = {
+        title :string;
+        description: string;
+        tech : string;
+        image: string;
+        link: string;
+    };
+
+    const [projects, setProjects] = useState<Project[]>([]);
+    const [currProject, setActiveProject] = useState<Project | null>(null);
     const [isFading, setIsFading] = useState(false);
 
-    function handleProjectHover(project: typeof projects[number]) {
+    useEffect(() => {
+    async function fetchProjects() {
+        const res = await fetch("/api/projects");
+        const data : Project[] = await res.json();
+
+        setProjects(data);
+        setActiveProject(data[0]);
+        }
+        fetchProjects();
+    }, [])
+
+    function handleProjectHover(project: Project) {
+        if(!currProject) return;
+
         if (project.title == currProject.title) return;
 
         setIsFading(true);
@@ -38,6 +40,15 @@ export default function ProjectsPreviews(){
         }, 180);
     }
 
+    if(!currProject) {
+        return (
+            <section className="px-6 py-24 border-t border-zinc-900">
+                <div className="max-w-6xl mx-auto text-center text-zinc-500">
+                    Loading Projects...
+                </div>
+            </section>
+        )
+    };
 
     return (
         <section className="px-6 py-24 border-t border-zinc-900">
@@ -56,20 +67,26 @@ export default function ProjectsPreviews(){
                     </div>
                     <div className="space-y-4">
                         {projects.map((project) => (
-                            <article key={project.title}
-                            onMouseEnter={() => handleProjectHover(project)}
-                            className={`rounded-2xl border p-6 transition ${
-                                currProject.title === project.title 
-                                ? "border-amber-400/70 bg-zinc-900/50"
-                                : "border-zinc-800 hover:border-amber-400 hover:bg-zinc-900/40"
-                            }`}
-                            >
-                                <h3 className="text-xl font-medium">{project.title}</h3>
-                                <p className="mt-3 text-zinc-400">
-                                {project.description}
-                            </p>
-                            <p className="mt-4 text-sm text-amber-400/80">{project.tech}</p>
-                            </article>
+                            <a key={project.link} 
+                            href={project.link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="block">
+                                <article key={project.title}
+                                onMouseEnter={() => handleProjectHover(project)}
+                                className={`rounded-2xl border p-6 transition ${
+                                    currProject.title === project.title 
+                                    ? "border-amber-400/70 bg-zinc-900/50"
+                                    : "border-zinc-800 hover:border-amber-400 hover:bg-zinc-900/40"
+                                }`}
+                                >
+                                    <h3 className="text-xl font-medium">{project.title}</h3>
+                                    <p className="mt-3 text-zinc-400">
+                                    {project.description}
+                                </p>
+                                <p className="mt-4 text-sm text-amber-400/80">{project.tech}</p>
+                                </article>
+                            </a>
                         ))}
                         </div>
                     </div>
