@@ -1,7 +1,7 @@
 export default function Capabilities(){
     return (
-        <section className="relative px-6 py-28 overflow-hidden border-y border-zinc-900">
-        
+        <section className="relative px-6 py-28 overflow-hidden border-y border-zinc-500">
+          <div className="absolute inset-0 bg-zinc-950/60" />
             <div className="relative max-w-6xl mx-auto ">
                 <div className="mx-auto mb-4 h-px w-32 bg-amber-400/70" />
                 <h2 className="text-3xl md:text-4xl font-semibold text-center">What I Build</h2>

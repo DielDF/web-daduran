@@ -51,14 +51,17 @@ export default function ProjectsPreviews(){
     };
 
     return (
+        
         <section className="px-6 py-24 border-t border-zinc-900">
+            <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(245,158,11,0.05),_transparent_60%)]" />
             <div className="max-w-6xl mx-auto">
+                
                 <div className="mx-auto mb-4 h-px w-32 bg-amber-400/70" />
                 <h2 className="text-3xl md:text-4xl font-semibold text-center">Star Accomplishments</h2>
                 <p className="mt-4 text-center text-zinc-400 max-w-2xl mx-auto">A handful of projects that reflect my work across several projects.</p>
                 <div className="mt-16 grid gap-10 lg:grid-cols-[1.4fr_0.8fr] items-start">
                     <div className="rounded-3xl border border-amber-400/20 bg-zinc-900/40 p-4 shadow-[0_0_40px_rgba(245,158,11,0.04)]">
-                        <div className="aspect-[4/3] w-full overflow-hidden rounded-2xl bg-zinc-800">
+                        <div className="aspect-[4/3] w-full overflow-hidden rounded-3xl bg-zinc-800">
                             <img src={currProject.image}
                             alt={`${currProject.title} image`}
                             className={`h-full w-full object-cover transition-opacity duration-300 ease-out ${isFading ? "opacity-0" : "opacity-100"}`}
