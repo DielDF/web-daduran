@@ -33,7 +33,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} bg-zinc-950 text-zinc-100 antialiased`}
       >
         <CursorGlow/>
-        <div className="relative z-10">{children}</div>
+          <div className="relative z-10">{children}</div>
         <GrainOverlay/>
       </body>
     </html>

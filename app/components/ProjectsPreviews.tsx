@@ -1,9 +1,9 @@
 "use client";
 
 import { useState , useEffect} from "react";
+import { type Language } from "../lib/content";
 
-export default function ProjectsPreviews(){
-
+export default function ProjectsPreviews({language, } : {language: Language}){
     type Project = {
         title :string;
         description: string;
@@ -18,14 +18,14 @@ export default function ProjectsPreviews(){
 
     useEffect(() => {
     async function fetchProjects() {
-        const res = await fetch("/api/projects");
+        const res = await fetch(`/api/projects?lang=${language}`);
         const data : Project[] = await res.json();
 
         setProjects(data);
         setActiveProject(data[0]);
         }
         fetchProjects();
-    }, [])
+    }, [language])
 
     function handleProjectHover(project: Project) {
         if(!currProject) return;
