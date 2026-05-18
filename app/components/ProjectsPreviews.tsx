@@ -1,9 +1,11 @@
 "use client";
 
 import { useState , useEffect} from "react";
-import { type Language } from "../lib/content";
+import { content, type Language } from "../lib/content";
 
 export default function ProjectsPreviews({language, } : {language: Language}){
+    const t = content[language].projects;
+
     type Project = {
         title :string;
         description: string;
@@ -57,8 +59,8 @@ export default function ProjectsPreviews({language, } : {language: Language}){
             <div className="max-w-6xl mx-auto">
                 
                 <div className="mx-auto mb-4 h-px w-32 bg-amber-400/70" />
-                <h2 className="text-3xl md:text-4xl font-semibold text-center">Star Accomplishments</h2>
-                <p className="mt-4 text-center text-zinc-400 max-w-2xl mx-auto">A handful of projects that reflect my work across several projects.</p>
+                <h2 className="text-3xl md:text-4xl font-semibold text-center">{t.title}</h2>
+                <p className="mt-4 text-center text-zinc-400 max-w-2xl mx-auto">{t.description}</p>
                 <div className="mt-16 grid gap-10 lg:grid-cols-[1.4fr_0.8fr] items-start">
                     <div className="rounded-3xl border border-amber-400/20 bg-zinc-900/40 p-4 shadow-[0_0_40px_rgba(245,158,11,0.04)]">
                         <div className="aspect-[4/3] w-full overflow-hidden rounded-3xl bg-zinc-800">

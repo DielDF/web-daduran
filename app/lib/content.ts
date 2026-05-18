@@ -37,6 +37,10 @@ export const content = {
         contact: {
             title: "Get In Touch",
             description: "Always open to new connections and opportunities.",
+        },
+        projects: {
+            title: "Star Accomplishments",
+            description: "A handful of projects that reflect my work and commitment."
         }
     },
     ES: {
@@ -75,6 +79,9 @@ export const content = {
         contact: {
             title: "Contáctame",
             description: "Siempre abierto a nuevos contactos y oportunidades.",
+        }, projects: {
+            title: "Projectos Insignia",
+            description: "Algunos projectos que reflejan mi trabajo y compromiso."
         }
     }
 }
